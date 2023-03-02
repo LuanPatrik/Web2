@@ -1,0 +1,23 @@
+@cor1: black;
+@cor2: rgb(57, 57, 182);
+@cor3: rgb(206, 59, 59);
+
+//Precisa de uma classe ou identificador seguido do parametro
+.cor(@cor){
+    background-color: @cor;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: bisque;
+}
+
+.bola1{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: @cor1;
+    //Chamada do Mixi
+    //.cor(@cor2)
+}
