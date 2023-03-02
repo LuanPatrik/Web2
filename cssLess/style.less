@@ -1,16 +1,21 @@
-@cor1: black;
-@cor2: rgb(57, 57, 182);
-@cor3: rgb(206, 59, 59);
+@import './_cores.less';
 
 //Precisa de uma classe ou identificador seguido do parametro
 .cor(@cor){
     background-color: @cor;
 }
 
+.centraliza(@alinha, @espaco){
+    display: flex;
+    align-items: @alinha;
+    justify-content: @espaco;
+}
+
 body{
     width: 100%;
     height: 100vh;
     background-color: bisque;
+    .centraliza(center, center)
 }
 
 .bola1{
@@ -19,5 +24,38 @@ body{
     border-radius: 50%;
     background-color: @cor1;
     //Chamada do Mixi
-    //.cor(@cor2)
+    .cor(@cor2);
+    .centraliza(center, center);
+
+    h1{
+        color: white;
+    }
+}
+
+.bola2{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: @cor1;
+    //Chamada do Mixi
+    .cor(@cor3);
+    .centraliza(center, center);
+
+    &:hover{
+        background-color: darkcyan;
+    }
+}
+
+.bola3{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: @cor1;
+    //Chamada do Mixi
+    .cor(@cor1);
+    .centraliza(center, center);
+
+    h1{
+        color: white;
+    }
 }
