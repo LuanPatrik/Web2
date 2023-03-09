@@ -1,5 +1,6 @@
 $(()=>{
-    $('#btnSalvar').on('click', ()=>{
+    $('#cep').on('blur', (e)=>{
+        e.preventDefault();
         var numCep = $('#cep').val();
         var url = "https://viacep.com.br/ws/"+numCep+"/json/";
 
@@ -9,7 +10,6 @@ $(()=>{
             dataType: "json",
 
             success:function(dados){
-                console.log(dados);
                 $("#uf").val(dados.uf);
                 $("#cidade").val(dados.localidade);
                 $("#logradouro").val(dados.logradouro);
@@ -17,5 +17,4 @@ $(()=>{
             }
         })
     });
-
 })
